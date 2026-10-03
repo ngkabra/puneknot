@@ -15,6 +15,6 @@ That tweet got the three of them to a table. Ravishankar brought along Nagaraj B
 
 The first talk was on 27 March 2025: Prof. Pradeep Apte on the alchemy of brewing. It sold out, and most talks since have too. Harish Bhamidipati joined the organizers a few months later and brought the quiz with him.
 
-KnOT borrows the model of Science on Tap and widens the brief from science to any area of knowledge where we can find someone who knows it well.
+KnOT borrows the model of Science on Tap, with Anoop's blessing, and widens the brief from science to any area of knowledge where we can find someone who knows it well.
 
 Pune KnOT is not a company or a registered body. Nobody is paid. The cover charge goes to the venue and comes back to you as food and drink.
