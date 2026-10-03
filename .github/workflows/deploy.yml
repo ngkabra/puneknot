@@ -29,6 +29,9 @@ jobs:
       - run: python build.py
         env:
           TZ: Asia/Kolkata
+          # Set the repository variable BASE_URL to /puneknot while the site is served from
+          # ngkabra.github.io/puneknot; delete the variable once puneknot.com points here.
+          BASE_URL: ${{ vars.BASE_URL }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
