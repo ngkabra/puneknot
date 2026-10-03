@@ -16,7 +16,8 @@ exec 9>"$STATE/lock"
 flock -n 9 || exit 0                        # another run is in progress
 
 cd "$SRC"                                   # git here is too old for `git -C`
-git fetch --quiet origin main
+# Explicit refspec: git 1.8.3 here does not update origin/main on a plain `git fetch origin main`.
+git fetch --quiet origin +refs/heads/main:refs/remotes/origin/main
 remote_rev=$(git rev-parse origin/main)
 today=$(TZ=Asia/Kolkata date +%F)
 stamp="$remote_rev $today"
