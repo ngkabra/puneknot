@@ -1,6 +1,6 @@
 ---
 title: About
-lede: Four people who liked beer and liked listening to people who know things started this in 2025.
+lede: Started in 2025 by people who like listening to those who know things, preferably over a drink.
 template: about.html
 order: 5
 ---
@@ -11,7 +11,7 @@ In November 2024, Ashish Kulkarni and Ravishankar Iyer, who had found out that t
 
 The very next day, by coincidence, Navin Kabra [tweeted](https://x.com/NGKabra/status/1854061279129833977) about Science on Tap, Anoop Mahajan's series in which a scientist gives a talk in a pub. It was a cool idea, he wrote, but it was in Koregaon Park, and like a true Punekar his reaction was "एवढं लांब?" (that far?). He hoped someone would start it up in Aundh or Baner.
 
-That tweet got the three of them to a table. Ravishankar brought along Nagaraj Balasubramanian, a cell biologist at IISER Pune. The four met at a brewery in Balewadi on 14 November, and by the end of the evening the thing had a name.
+That tweet got the three of them to a table. Ravishankar brought along Nagaraj Balasubramanian, a cell biologist at IISER Pune. They met at a brewery in Balewadi on 14 November, and by the end of the evening the thing had a name.
 
 The first talk was on 27 March 2025: Prof. Pradeep Apte on the alchemy of brewing. It sold out, and most talks since have too. Harish Bhamidipati joined the organizers a few months later and brought the quiz with him.
 
