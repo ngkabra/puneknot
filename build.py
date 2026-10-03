@@ -104,7 +104,7 @@ def main() -> None:
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(env.get_template(template).render(path=rel, **ctx), encoding="utf-8")
 
-    write("index.html", "home.html", next_talk=upcoming[0] if upcoming else None, recent=past[:10], here="home")
+    write("index.html", "home.html", next_talk=upcoming[0] if upcoming else None, recent=past[:8], here="home")
     write("talks/index.html", "talks.html", past=past, upcoming=upcoming, here="talks")
     for talk in talks:
         write(f"talks/{talk['slug']}/index.html", "talk.html", talk=talk, here="talks")

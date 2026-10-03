@@ -1,51 +1,45 @@
 {% extends "base.html" %}
 {% block main %}
 <section class="hero">
-  <div class="hero-art" aria-hidden="true">
-    <i class="b b1"></i><i class="b b2"></i><i class="b b3"></i><i class="b b4"></i><i class="b b5"></i>
-    <img src="{{ base }}/static/img/logo-800.png" alt="" width="460" height="460">
-  </div>
-  <div class="hero-text">
-    <h1>Somebody who really knows their subject. A room full of curious people. Beer.</h1>
-    <p class="lede">{{ site.name }} is a monthly talk by an expert in some area of knowledge: a galaxy, a river, a trial, a molecule, a hill in Pune. Pitched at laypeople, over drinks and dinner.</p>
-    <p class="slab"><span class="venue">{{ site.venue.name }}</span><span class="area">Aundh</span><span class="when">Last Thursday<br>6:30pm</span></p>
+  <img src="{{ base }}/static/img/logo-800.png" alt="Pune KnOT: Knowledge on Tap" width="300" height="300">
+  <div>
+    <h1>A talk by an expert, over&nbsp;drinks. Once&nbsp;a&nbsp;month, in&nbsp;Aundh.</h1>
+    <p class="lede">Someone who knows a subject deeply explains it to a room of curious people: a galaxy, a river, a trial, a molecule, a hill in Pune. In person only, and never recorded.</p>
+    <p class="where">{{ site.when }} &nbsp;·&nbsp; 6:30 pm &nbsp;·&nbsp; <a href="{{ site.venue.map }}">{{ site.venue.name }}, Aundh</a></p>
   </div>
 </section>
 
 <section class="next">
-  <div class="next-bubble">
-    <p class="kicker">Next on tap</p>
-    {% if next_talk %}
+  <p class="label">Next talk</p>
+  {% if next_talk %}
+  <div class="next-body">
     <h2><a href="{{ base }}/talks/{{ next_talk.slug }}/">{{ next_talk.title }}</a></h2>
-    <p class="who">with {{ next_talk.speaker_line }}</p>
-    <p class="date">{{ next_talk.date|longdate }}</p>
-    {% if next_talk.tickets_url %}
-    <a class="btn" href="{{ next_talk.tickets_url }}">Get a ticket</a>
-    {% else %}
-    <p class="small">Tickets are released to the WhatsApp community first.</p>
-    <a class="btn" href="{{ site.whatsapp }}">Join to get the link</a>
-    {% endif %}
-    {% else %}
-    <h2>Being lined up</h2>
-    <p class="small">The next speaker and date are announced on the WhatsApp community first, and members get a head start on tickets.</p>
-    <a class="btn" href="{{ site.whatsapp }}">Join on WhatsApp</a>
-    {% endif %}
+    <p>{{ next_talk.speaker_line }} &nbsp;·&nbsp; {{ next_talk.date|longdate }}</p>
   </div>
-  <ul class="rules">
-    <li><b>In person only.</b> No livestream, no recording. You have to be there.</li>
-    <li><b>Seven sharp.</b> The quiz starts on the dot and the last question is at 8:30.</li>
-    <li><b>Nobody has to drink.</b> The {{ site.cover_charge }} cover comes off your bill, for anything on the menu. Children are welcome.</li>
-    <li><b>Talk to one stranger</b> before you leave.</li>
-  </ul>
+  {% if next_talk.tickets_url %}
+  <a class="btn" href="{{ next_talk.tickets_url }}">Get a ticket</a>
+  {% else %}
+  <a class="btn" href="{{ site.whatsapp }}">Tickets via WhatsApp</a>
+  {% endif %}
+  {% else %}
+  <div class="next-body">
+    <h2>To be announced</h2>
+    <p>The WhatsApp community hears first, and gets a head start on tickets.</p>
+  </div>
+  <a class="btn" href="{{ site.whatsapp }}">Join on WhatsApp</a>
+  {% endif %}
 </section>
 
-<section class="wall">
-  <h2 class="sec">Poured so far</h2>
+<section class="recent">
+  <div class="sechead"><h2>Recent talks</h2><a href="{{ base }}/talks/">All {{ talk_count }} talks</a></div>
   <div class="posters">
     {% for t in recent %}
-    <a href="{{ base }}/talks/{{ t.slug }}/"><img loading="lazy" src="{{ base }}/static/posters/{{ t.thumb }}" alt="{{ t.title }}, with {{ t.speaker_line }}"></a>
+    <a href="{{ base }}/talks/{{ t.slug }}/">
+      <img loading="lazy" src="{{ base }}/static/posters/{{ t.thumb }}" alt="">
+      <b>{{ t.title }}</b>
+      <span>{{ t.speaker_line }} · <span>{{ t.date|shortdate }}</span></span>
+    </a>
     {% endfor %}
   </div>
-  <p class="more"><a href="{{ base }}/talks/">All {{ talk_count }} talks</a></p>
 </section>
 {% endblock %}
