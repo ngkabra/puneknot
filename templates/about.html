@@ -1,0 +1,25 @@
+{% extends "page.html" %}
+{% block after %}
+<section class="prose page">
+  <h2>Who runs it</h2>
+  <ul class="people">
+    {% for o in site.organizers %}
+    <li><b>{% if o.url %}<a href="{{ o.url }}">{{ o.name }}</a>{% else %}{{ o.name }}{% endif %}</b> {{ o.line }}</li>
+    {% endfor %}
+  </ul>
+  <p>With help from {% for v in site.volunteers %}<b>{{ v.name }}</b> ({{ v.line|lower|trim('.') }}){{ ", " if not loop.last else "." }}{% endfor %} Thanks to the team at {{ site.venue.name }} for the room, and to Anoop Mahajan for the idea.</p>
+
+  <h2>Written about us</h2>
+  <ul class="people">
+    {% for p in site.press %}
+    <li><b><a href="{{ p.url }}">{{ p.title }}</a></b> {{ p.by }}, {{ p.date }}.</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Start one where you live</h2>
+  <p>Nothing here is hard to copy: a venue that will give you a quiet weeknight, one good speaker a month, a WhatsApp group, and a rule that you start on time. If you want to run a Knowledge on Tap in your city or on your campus, write to us and we will tell you what we have learnt.</p>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:{{ site.email }}">{{ site.email }}</a>, or find any of us at {{ site.venue.name }} on the last Thursday of the month.</p>
+</section>
+{% endblock %}

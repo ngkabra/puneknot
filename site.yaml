@@ -1,0 +1,59 @@
+# Site-wide facts. Edit here, not in the templates.
+name: Pune Knowledge on Tap
+short_name: Pune KnOT
+url: https://puneknot.com
+tagline: A monthly talk by an expert, over drinks.
+whatsapp: https://chat.whatsapp.com/GkPv2VvjTWSKL2jNoh2PO2
+email: puneknot@gmail.com
+venue:
+  name: Wynkk
+  area: Aundh, Pune
+  map: https://maps.app.goo.gl/PCtPtvfTDXFufJDz6
+when: Last Thursday of every month
+cover_charge: ₹300
+
+schedule:
+  - time: "6:30"
+    what: Doors
+    detail: Check in, find a seat, order, meet people.
+  - time: "7:00"
+    what: Warm-up quiz
+    detail: Fifteen minutes of questions on the evening's theme. Starts on the dot.
+  - time: "7:15"
+    what: The talk
+    detail: About 50 minutes, then questions from the floor.
+  - time: "8:30"
+    what: Last question
+    detail: The session ends on time. Most people stay on for dinner.
+
+organizers:
+  - name: Ashish Kulkarni
+    line: Teaches economics and writes EconForEverybody.
+    url: https://www.econforeverybody.com
+  - name: Nagaraj Balasubramanian
+    line: Cell biologist at IISER Pune.
+    url: https://x.com/AdhesionLab
+  - name: Navin Kabra
+    line: Software person; runs the WhatsApp community.
+    url: https://x.com/NGKabra
+  - name: Ravishankar Iyer
+    line: Storytelling coach and author of Story Rules.
+  - name: Harish Bhamidipati
+    line: Sets and runs the warm-up quiz.
+    url: https://www.linkedin.com/in/bvhk/
+
+volunteers:
+  - name: Navya Bhamidipati
+    line: Posters and speaker coordination.
+  - name: Agastya
+    line: Photographs.
+
+press:
+  - title: KnOT in My Backyard
+    by: Ashish Kulkarni, EconForEverybody
+    date: December 2025
+    url: https://www.econforeverybody.com/p/knot-in-my-backyard
+  - title: Cocktails, canapés and hard talk
+    by: The Indian Express
+    date: April 2026
+    url: https://indianexpress.com/article/cities/pune/cocktails-canapes-and-hard-talk-10660666/

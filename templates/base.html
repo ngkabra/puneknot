@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ site.name }}{% endblock %}</title>
+<meta name="description" content="{% block description %}{{ site.name }} (KnOT): {{ site.tagline }} {{ site.when }}, at {{ site.venue.name }}, {{ site.venue.area }}.{% endblock %}">
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:description" content="{{ self.description() }}">
+<meta property="og:image" content="{{ site.url }}{% block ogimage %}/static/img/logo-800.png{% endblock %}">
+<link rel="icon" href="{{ base }}/static/img/favicon.png">
+<link rel="apple-touch-icon" href="{{ base }}/static/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Anton&family=Archivo:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ base }}/static/site.css">
+</head>
+<body class="p-{{ here or 'x' }}">
+<header class="top">
+  <a class="mark" href="{{ base }}/" aria-label="{{ site.name }}, home"><img src="{{ base }}/static/img/logo-320.png" alt="" width="64" height="64"><span>Pune <b>KnOT</b></span></a>
+  <nav aria-label="Main">
+    <a href="{{ base }}/talks/"{% if here == 'talks' %} aria-current="page"{% endif %}>Talks</a>
+    {% for p in pages %}
+    <a href="{{ base }}/{{ p.slug }}/"{% if here == p.slug %} aria-current="page"{% endif %}>{{ p.nav or p.title }}</a>
+    {% endfor %}
+  </nav>
+</header>
+<main>
+{% block main %}{% endblock %}
+</main>
+<footer class="foot">
+  <div class="band">Knowledge on Tap</div>
+  <div class="foot-in">
+    <p><b>{{ site.venue.name }}, {{ site.venue.area }}.</b> {{ site.when }}, 6:30pm.<br>In person. Not recorded. Chatham House Rule.</p>
+    <p><a href="{{ site.whatsapp }}">Join the WhatsApp community</a><br><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+  </div>
+</footer>
+</body>
+</html>

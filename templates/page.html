@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }} | {{ site.short_name }}{% endblock %}
+{% block main %}
+<section class="pagehead">
+  <h1>{{ page.title }}</h1>
+  {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+</section>
+{% block before %}{% endblock %}
+<section class="prose page">{{ page.html|safe }}</section>
+{% block after %}{% endblock %}
+{% if page.cta %}{% include "_join.html" %}{% endif %}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}{{ talk.title }}, with {{ talk.speaker_line }} | {{ site.short_name }}{% endblock %}
+{% block description %}{{ talk.title }}{% if talk.subtitle %}: {{ talk.subtitle }}{% endif %}. {{ talk.speaker_line }} at {{ site.name }}, {{ talk.date|longdate }}.{% endblock %}
+{% block ogimage %}{% if talk.poster %}/static/posters/{{ talk.poster }}{% else %}{{ super() }}{% endif %}{% endblock %}
+{% block main %}
+<article class="talk">
+  <div class="talk-text">
+    <p class="kicker">KnOT No. {{ '%02d' % talk.number }} &middot; {{ talk.field }}</p>
+    <h1>{{ talk.title }}</h1>
+    {% if talk.subtitle %}<p class="sub">{{ talk.subtitle }}</p>{% endif %}
+    <p class="who">with {{ talk.speaker_line }}</p>
+    <p class="date">{{ talk.date|longdate }} &middot; {{ site.venue.name }}, Aundh</p>
+    {% if talk.upcoming %}
+    <p class="ticket">{% if talk.tickets_url %}<a class="btn" href="{{ talk.tickets_url }}">Get a ticket</a>{% else %}Tickets are released to the WhatsApp community first. <a href="{{ site.whatsapp }}">Join to get the link.</a>{% endif %}</p>
+    {% endif %}
+    <div class="prose">{{ talk.abstract_html|safe }}</div>
+    {% if talk.note %}<p class="note">{{ talk.note }}</p>{% endif %}
+    {% if talk.bio_html %}
+    <h2>About the speaker{{ 's' if talk.speakers|length > 1 }}</h2>
+    <div class="prose">{{ talk.bio_html|safe }}</div>
+    {% endif %}
+    <p class="back"><a href="{{ base }}/talks/">All talks</a></p>
+  </div>
+  {% if talk.poster %}
+  <a class="talk-poster" href="{{ base }}/static/posters/{{ talk.poster }}"><img src="{{ base }}/static/posters/{{ talk.poster }}" alt="Poster for {{ talk.title }}, with {{ talk.speaker_line }}"></a>
+  {% endif %}
+</article>
+{% endblock %}

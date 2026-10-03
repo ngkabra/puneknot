@@ -1,0 +1,9 @@
+{% extends "page.html" %}
+{% block before %}
+<ol class="evening">
+  {% for s in site.schedule %}
+  <li><span class="clock">{{ s.time }}</span><b>{{ s.what }}</b><span>{{ s.detail }}</span></li>
+  {% endfor %}
+</ol>
+{% endblock %}
+{% block after %}{% include "_join.html" %}{% endblock %}

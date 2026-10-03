@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Talks | {{ site.short_name }}{% endblock %}
+{% block main %}
+<section class="pagehead">
+  <h1>Talks</h1>
+  <p class="lede">Every Pune KnOT so far, newest first. None of them were recorded.</p>
+</section>
+{% if upcoming %}
+<section class="list">
+  <h2 class="sec">Coming up</h2>
+  <ol class="taplist">
+  {% for t in upcoming %}
+    <li><a href="{{ base }}/talks/{{ t.slug }}/"><span class="no">{{ '%02d' % t.number }}</span><span class="t">{{ t.title }}<em>{{ t.speaker_line }}</em></span><span class="f">{{ t.field }}</span><span class="d">{{ t.date|shortdate }}</span></a></li>
+  {% endfor %}
+  </ol>
+</section>
+{% endif %}
+<section class="list">
+  <ol class="taplist">
+  {% for t in past %}
+    <li><a href="{{ base }}/talks/{{ t.slug }}/"><span class="no">{{ '%02d' % t.number }}</span><span class="t">{{ t.title }}<em>{{ t.speaker_line }}</em></span><span class="f">{{ t.field }}</span><span class="d">{{ t.date|shortdate }}</span></a></li>
+  {% endfor %}
+  </ol>
+</section>
+<section class="wall">
+  <h2 class="sec">The posters</h2>
+  <div class="posters">
+    {% for t in past %}{% if t.thumb %}
+    <a href="{{ base }}/talks/{{ t.slug }}/"><img loading="lazy" src="{{ base }}/static/posters/{{ t.thumb }}" alt="{{ t.title }}, with {{ t.speaker_line }}"></a>
+    {% endif %}{% endfor %}
+  </div>
+</section>
+{% endblock %}
