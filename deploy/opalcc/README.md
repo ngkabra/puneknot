@@ -1,16 +1,22 @@
 # Deploying to Opalstack (opalcc)
 
-The site is static. `build.py` writes `_site/`, and `deploy.sh` copies that directory to
-the document root of an Opalstack static app.
+The code lives on GitHub; the site is served from Opalstack. The server keeps its own
+checkout of this repository. Every ten minutes a cron job there fetches `main`; if there
+is a new commit (or the date has changed) it rebuilds the site and copies the result into
+the static app's document root. The repository is public, so the server needs no
+credentials for GitHub, and GitHub holds no credentials for the server.
 
 | | |
 |---|---|
 | Account | `navincc` on `opal2.opalstack.com` (SSH alias `opalcc` on Navin's laptop) |
 | App | `puneknot`, type "Nginx Static Only" |
 | Document root | `/home/navincc/apps/puneknot` |
+| Checkout | `/home/navincc/puneknot-src` |
 | Site | `puneknot.com` and `www.puneknot.com`, routed to the app at `/` |
 
-## One-time setup (Opalstack panel, done by hand)
+## One-time setup
+
+In the Opalstack panel, by hand:
 
 1. Applications → Create: name `puneknot`, type **Nginx Static Only**.
 2. Domains → add `puneknot.com` and `www.puneknot.com`.
@@ -19,56 +25,50 @@ the document root of an Opalstack static app.
 4. DNS at the registrar: either use Opalstack's nameservers, or point `A` records for
    `puneknot.com` and `www` at the IP the panel shows for the site.
 
-Then, from the laptop, `deploy/opalcc/deploy.sh --dry-run` followed by
-`SKIP_HEALTH=1 deploy/opalcc/deploy.sh` if DNS is not live yet.
+Then on the server (`ssh opalcc`):
+
+```
+git clone https://github.com/ngkabra/puneknot.git ~/puneknot-src
+~/puneknot-src/deploy/opalcc/setup.sh
+```
+
+`setup.sh` creates a Python 3.12 virtualenv in the checkout, adds the cron entry, and
+publishes the site once. It does not need DNS to be live.
 
 ## Normal deploy
 
-Automatic: every push to `main`, and once a night, GitHub Actions runs
-`.github/workflows/deploy.yml`, which calls `deploy/opalcc/deploy.sh`.
+Push to `main`. The site updates within ten minutes.
 
-By hand, from the repository root on a machine with the `opalcc` SSH alias:
+To publish immediately, from the laptop:
 
 ```
-deploy/opalcc/deploy.sh --dry-run   # shows what would change
-deploy/opalcc/deploy.sh
+ssh opalcc '~/puneknot-src/deploy/opalcc/update.sh --force'
 ```
 
-The script builds, checks the build, uploads with `rsync --delete --delay-updates`, and
-finishes by requesting `https://puneknot.com/talks/`.
+`update.sh` fetches `main`, installs any new requirements, builds, checks the build, and
+only then replaces the live files. If the build or the check fails, the live site is left
+as it was and the failure is written to the log.
 
-## Switching on the automatic deploy
-
-Until this is done the workflow only builds, as a check.
-
-1. Create an SSH key used for nothing else: `ssh-keygen -t ed25519 -f puneknot_deploy -N ""`.
-2. Install the public key for an Opalstack shell user that can write to the app. Prefer a
-   separate shell user limited to this app over the main `navincc` login; if one is used,
-   change `OPALCC_SSH` in the workflow and `REMOTE_ROOT` in `deploy.sh` to match.
-3. GitHub → repository Settings → Secrets and variables → Actions:
-   - secret `OPALCC_SSH_KEY`: the private key;
-   - variable `OPALCC_DEPLOY`: `true`;
-   - variable `SKIP_HEALTH`: `1` only while DNS is not pointing at Opalstack; delete it after.
-4. Delete the local copy of the private key.
-
-`deploy/opalcc/known_hosts` pins the server's host keys. If Opalstack rotates them the
-deploy fails at the SSH step; check the new keys with Opalstack before updating the file.
+The GitHub Actions workflow (`.github/workflows/build-check.yml`) does not deploy. It only
+checks that a push still builds, so a broken edit shows up as a red cross on GitHub.
 
 ## What lives where
 
 | State | Source of truth | Deploy action | Rule |
 |---|---|---|---|
-| Talks, pages, templates, posters | Git (`main`) | rebuilt every deploy | edit in the repository only |
-| `_site/` | `build.py` output | replaces the document root | never edit on the server |
-| Document root on Opalstack | the last deploy | fully overwritten, extra files deleted | keep nothing else there |
-| Deploy key | GitHub secret `OPALCC_SSH_KEY` | not in the repository | rotate by repeating "Switching on" |
+| Talks, pages, templates, posters | GitHub (`main`) | pulled and rebuilt | edit in the repository only |
+| Server checkout `~/puneknot-src` | GitHub | `git reset --hard origin/main` | edits made on the server are discarded |
+| Document root `~/apps/puneknot` | the last build | fully overwritten, extra files deleted | keep nothing else there |
+| `~/puneknot-src/.venv`, `.deploy/` | the server | kept | virtualenv, lock, stamp and log |
 
-There is no database, no uploads and no server-side code, so there is nothing to back up
-on the server: the repository is the backup.
+There is no database, no uploads, no server-side code and no secret, so there is nothing
+to back up on the server: the repository is the backup.
 
 ## Checks, logs, rollback
 
 - Health check: `curl -sI https://puneknot.com/talks/` should return 200.
-- Logs: `ssh opalcc 'tail -50 ~/logs/apps/puneknot/access.log'` (and `error.log`).
-- Rollback: `git revert <bad commit>` and push; or, by hand,
-  `git checkout <good commit> && deploy/opalcc/deploy.sh && git checkout main`.
+- What is live: `ssh opalcc 'tail -5 ~/puneknot-src/.deploy/deploy.log'` shows the last
+  published commit, or the build error if one failed.
+- Web server logs: `ssh opalcc 'tail -50 ~/logs/apps/puneknot/access.log'` (and `error.log`).
+- Rollback: `git revert <bad commit>` and push; the server picks it up like any other commit.
+- Stop automatic updates: `ssh opalcc 'crontab -e'` and remove the `update.sh` line.

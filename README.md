@@ -1,8 +1,8 @@
 # puneknot.com
 
 The website for Pune Knowledge on Tap (KnOT). A static site: `build.py` turns the files
-here into HTML in `_site/`, which is published to Opalstack on every push to `main`
-(see `deploy/opalcc/README.md`).
+here into HTML in `_site/`. The Opalstack server pulls `main` from GitHub every ten
+minutes and rebuilds (see `deploy/opalcc/README.md`).
 
 ## Add a talk
 
@@ -31,7 +31,7 @@ You can do all of this in the GitHub web interface.
    The bio.
    ```
 
-3. Commit. The site rebuilds in a minute or two.
+3. Commit. The site updates within ten minutes.
 
 A talk dated today or later is shown as "Next on tap" on the home page, without a ticket
 link: the WhatsApp community gets the link first. When registration opens to the public,
@@ -71,5 +71,5 @@ python -m http.server --directory _site 8000
 | `templates/` | Jinja2 HTML templates |
 | `static/` | CSS, logo, posters |
 | `build.py` | The generator |
-| `deploy/opalcc/` | Deploy script and instructions for Opalstack |
-| `.github/workflows/deploy.yml` | Runs the build and the deploy script |
+| `deploy/opalcc/` | Scripts and instructions for the Opalstack server, which pulls from GitHub |
+| `.github/workflows/build-check.yml` | Checks that a push still builds; does not deploy |
