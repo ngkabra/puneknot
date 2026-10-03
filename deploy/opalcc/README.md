@@ -24,7 +24,7 @@ In the Opalstack panel, by hand:
    Let's Encrypt certificate on, redirect HTTP to HTTPS.
 4. DNS: the domain is registered at Namecheap and uses Opalstack's nameservers. In
    Namecheap → Domain List → Manage → Nameservers, choose "Custom DNS" and enter
-   `ns1.opalstack.com` and `ns2.opalstack.com`. Do this after step 2, so that Opalstack
+   `ns1.us.opalstack.com`, `ns2.us.opalstack.com` and `ns3.us.opalstack.com`. Do this after step 2, so that Opalstack
    already has DNS records for the domain. Namecheap's own DNS records and email
    forwarding stop applying once the nameservers change.
 
