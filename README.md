@@ -1,7 +1,8 @@
 # puneknot.com
 
 The website for Pune Knowledge on Tap (KnOT). A static site: `build.py` turns the files
-here into HTML in `_site/`, and GitHub publishes it on every push to `main`.
+here into HTML in `_site/`, which is published to Opalstack on every push to `main`
+(see `deploy/opalcc/README.md`).
 
 ## Add a talk
 
@@ -70,4 +71,5 @@ python -m http.server --directory _site 8000
 | `templates/` | Jinja2 HTML templates |
 | `static/` | CSS, logo, posters |
 | `build.py` | The generator |
-| `.github/workflows/deploy.yml` | Build and publish to GitHub Pages |
+| `deploy/opalcc/` | Deploy script and instructions for Opalstack |
+| `.github/workflows/deploy.yml` | Runs the build and the deploy script |

@@ -10,15 +10,13 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: deploy-opalcc
+  cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,21 +24,24 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - run: python build.py
+      - name: Build only (deploy not switched on)
+        if: vars.OPALCC_DEPLOY != 'true'
+        run: python build.py
         env:
           TZ: Asia/Kolkata
-          # Set the repository variable BASE_URL to /puneknot while the site is served from
-          # ngkabra.github.io/puneknot; delete the variable once puneknot.com points here.
-          BASE_URL: ${{ vars.BASE_URL }}
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Install the deploy key
+        if: vars.OPALCC_DEPLOY == 'true'
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$OPALCC_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          cp deploy/opalcc/known_hosts ~/.ssh/known_hosts
+        env:
+          OPALCC_SSH_KEY: ${{ secrets.OPALCC_SSH_KEY }}
+      - name: Build and upload to Opalstack
+        if: vars.OPALCC_DEPLOY == 'true'
+        run: deploy/opalcc/deploy.sh
+        env:
+          OPALCC_SSH: navincc@opal2.opalstack.com
+          PYTHON: python
+          SKIP_HEALTH: ${{ vars.SKIP_HEALTH }}

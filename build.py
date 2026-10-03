@@ -112,9 +112,6 @@ def main() -> None:
         write(f"{page['slug']}/index.html", page.get("template", "page.html"), page=page, here=page["slug"])
     write("404.html", "404.html", here="")
 
-    domain = site["url"].split("//", 1)[1]
-    if not BASE:
-        (OUT / "CNAME").write_text(domain + "\n")
     urls = ["/", "/talks/"] + [f"/talks/{t['slug']}/" for t in talks] + [f"/{p['slug']}/" for p in pages]
     (OUT / "sitemap.txt").write_text("\n".join(site["url"] + u for u in urls) + "\n")
     print(f"built {len(talks)} talks ({len(upcoming)} upcoming), {len(pages)} pages -> {OUT}")
