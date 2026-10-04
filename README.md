@@ -41,6 +41,11 @@ add one line to the talk's front matter and commit:
 tickets_url: https://...
 ```
 
+The home page has a countdown to the next talk. It runs to the date of the next talk file.
+If there is none, it runs to `next_date` in `site.yaml` if you have set one, and otherwise to
+the last Thursday of the month, shown as an "expected date". So when a date is fixed before
+the speaker is announced, or the talk is not on the last Thursday, set `next_date`.
+
 The day after the talk it moves into the archive by itself. Leave `tickets_url` in; it is
 ignored for past talks.
 

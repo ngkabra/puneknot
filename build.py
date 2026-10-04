@@ -69,6 +69,26 @@ def load_talks(today: dt.date) -> list[dict]:
     return talks
 
 
+def last_thursday(year: int, month: int) -> dt.date:
+    first_of_next = dt.date(year + month // 12, month % 12 + 1, 1)
+    day = first_of_next - dt.timedelta(days=1)
+    return day - dt.timedelta(days=(day.weekday() - 3) % 7)
+
+
+def next_event(site: dict, upcoming: list[dict], today: dt.date) -> dict:
+    """The date the home-page countdown runs to, and whether it has been announced."""
+    if upcoming:
+        date, confirmed = upcoming[0]["date"], True
+    elif site.get("next_date") and dt.date.fromisoformat(str(site["next_date"])) >= today:
+        date, confirmed = dt.date.fromisoformat(str(site["next_date"])), True
+    else:
+        date = last_thursday(today.year, today.month)
+        if date < today:
+            date = last_thursday(today.year + today.month // 12, today.month % 12 + 1)
+        confirmed = False
+    return {"date": date, "confirmed": confirmed, "iso": f"{date.isoformat()}T{site.get('start_time', '18:30')}:00+05:30"}
+
+
 def load_pages() -> list[dict]:
     pages = []
     for path in sorted((ROOT / "pages").glob("*.md")):
@@ -104,7 +124,14 @@ def main() -> None:
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(env.get_template(template).render(path=rel, **ctx), encoding="utf-8")
 
-    write("index.html", "home.html", next_talk=upcoming[0] if upcoming else None, recent=past[:8], here="home")
+    write(
+        "index.html",
+        "home.html",
+        next_talk=upcoming[0] if upcoming else None,
+        event=next_event(site, upcoming, today),
+        recent=past[:8],
+        here="home",
+    )
     write("talks/index.html", "talks.html", past=past, upcoming=upcoming, here="talks")
     for talk in talks:
         write(f"talks/{talk['slug']}/index.html", "talk.html", talk=talk, here="talks")

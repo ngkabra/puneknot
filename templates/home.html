@@ -10,7 +10,12 @@
 </section>
 
 <section class="next">
-  <p class="label">Next talk</p>
+  <div class="next-when">
+    <p class="label">Next talk</p>
+    <p class="countdown" data-until="{{ event.iso }}" hidden>
+      <span><b data-u="d">0</b> days</span><span><b data-u="h">0</b> hrs</span><span><b data-u="m">0</b> min</span>
+    </p>
+  </div>
   {% if next_talk %}
   <div class="next-body">
     <h2><a href="{{ base }}/talks/{{ next_talk.slug }}/">{{ next_talk.title }}</a></h2>
@@ -23,12 +28,30 @@
   {% endif %}
   {% else %}
   <div class="next-body">
-    <h2>To be announced</h2>
-    <p>The WhatsApp community hears first, and gets a head start on tickets.</p>
+    <h2>{{ event.date|longdate }}</h2>
+    <p>{% if event.confirmed %}Speaker to be announced.{% else %}Expected date: the last Thursday of the month. Speaker to be announced.{% endif %} The WhatsApp community hears first.</p>
   </div>
   <a class="btn" href="{{ site.whatsapp }}">Join on WhatsApp</a>
   {% endif %}
 </section>
+<script>
+(function () {
+  var el = document.querySelector(".countdown");
+  if (!el) return;
+  var until = new Date(el.dataset.until).getTime();
+  function tick() {
+    var left = until - Date.now();
+    if (left <= 0) { el.hidden = true; return; }
+    var mins = Math.floor(left / 60000);
+    el.querySelector('[data-u="d"]').textContent = Math.floor(mins / 1440);
+    el.querySelector('[data-u="h"]').textContent = Math.floor(mins % 1440 / 60);
+    el.querySelector('[data-u="m"]').textContent = mins % 60;
+    el.hidden = false;
+  }
+  tick();
+  setInterval(tick, 20000);
+})();
+</script>
 
 <section class="recent">
   <div class="sechead"><h2>Recent talks</h2><a href="{{ base }}/talks/">All {{ talk_count }} talks</a></div>

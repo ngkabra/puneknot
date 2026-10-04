@@ -10,6 +10,11 @@ venue:
   area: Aundh, Pune
   map: https://maps.app.goo.gl/PCtPtvfTDXFufJDz6
 when: Last Thursday of every month
+# Date of the next talk, for the countdown on the home page, when the date is fixed but the
+# talk has no file in talks/ yet. Example: next_date: '2026-11-19'. Leave empty otherwise: the
+# countdown then uses the next talk file, or failing that the last Thursday of the month.
+next_date:
+start_time: "18:30"
 cover_charge: ₹300
 
 schedule:
@@ -38,6 +43,7 @@ organizers:
     url: https://x.com/NGKabra
   - name: Ravishankar Iyer
     line: Storytelling coach and author of Story Rules.
+    url: https://x.com/storyrulesindia
   - name: Harish Bhamidipati
     line: Sets and runs the warm-up quiz.
     url: https://www.linkedin.com/in/bvhk/
