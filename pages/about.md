@@ -7,10 +7,10 @@ order: 5
 
 ## How it started
 
-Pune KnOT began as a wish for something like Science on Tap, Anoop Mahajan's long-running series of talks by scientists in a Koregaon Park pub, on the other side of town and on any subject.
+In early November 2024, Ravishankar Iyer was having much the same conversation with two people. With Nagaraj Balasubramanian, a cell biologist at IISER Pune, it was about starting something at Pagdandi like Chai and Why?, TIFR's public science talks. With Ashish Kulkarni, who lived nearby and shared his liking for beer, it was about hosting public talks over drinks.
 
-In early November 2024, Ashish Kulkarni and Ravishankar Iyer, who lived near each other and both liked beer, talked about hosting public talks over drinks. The next day, by coincidence, Navin Kabra [tweeted](https://x.com/NGKabra/status/1854061279129833977) that he hoped someone would start a Science on Tap in Aundh or Baner, because for a true Punekar, Koregaon Park is "एवढं लांब?" (that far?). The three agreed to meet. A day or two before they did, Nagaraj Balasubramanian, a cell biologist at IISER Pune, told Ravishankar he had been thinking of something like TIFR's Chai and Why? at Pagdandi, and Ravishankar asked him along.
+The day after Ravishankar and Ashish spoke, by coincidence, Navin Kabra [tweeted](https://x.com/NGKabra/status/1854061279129833977) about Science on Tap, Anoop Mahajan's long-running series of talks by scientists in a Koregaon Park pub. He hoped someone would start one in Aundh or Baner, because for a true Punekar, Koregaon Park is "एवढं लांब?" (that far?).
 
-They met at a brewery in Balewadi on 14 November 2024 and left with a name. Anoop gave it his blessing. The first talk was on 27 March 2025, Prof. Pradeep Apte on the alchemy of brewing, and it sold out. Harish Bhamidipati joined the organizers a few months later and started the quiz.
+That brought them all to a brewery in Balewadi on 14 November 2024, and they left with a name. Anoop gave it his blessing, and KnOT widened the brief from science to any subject. The first talk was on 27 March 2025, Prof. Pradeep Apte on the alchemy of brewing, and it sold out. Harish Bhamidipati joined the organizers a few months later and brought the quiz with him.
 
 Pune KnOT is not a company or a registered body. Nobody is paid. The cover charge goes to the venue and comes back to you as food and drink.
