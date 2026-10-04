@@ -5,6 +5,7 @@ speakers:
 - Karishma Kaushik
 date: '2026-02-12'
 field: Women in science
+category: Science & nature
 note: A special mid-month session, moved from 29 January.
 poster: 2026-02-12.jpg
 ---

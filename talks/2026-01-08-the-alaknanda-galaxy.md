@@ -6,6 +6,7 @@ speakers:
 - Yogesh Wadadekar
 date: '2026-01-08'
 field: Astronomy
+category: Science & nature
 note: A special extra session.
 poster: 2026-01-08.jpg
 ---

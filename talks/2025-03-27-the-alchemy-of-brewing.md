@@ -4,6 +4,7 @@ speakers:
 - Pradeep Apte
 date: '2025-03-27'
 field: Economics & history
+category: Economy & society
 note: The inaugural Pune KnOT.
 poster: 2025-03-27.jpg
 ---

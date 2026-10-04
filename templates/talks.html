@@ -14,8 +14,54 @@
 </section>
 {% endif %}
 <section class="list">
-  <ol class="talklist">
+  <div class="finder" hidden>
+    <div class="chips" role="group" aria-label="Filter by subject">
+      <button type="button" data-cat="" aria-pressed="true">All</button>
+      {% for c in site.categories %}
+      <button type="button" data-cat="{{ c }}" aria-pressed="false">{{ c }}</button>
+      {% endfor %}
+    </div>
+    <input type="search" placeholder="Search talks and speakers" aria-label="Search talks and speakers">
+    <button type="button" class="surprise">Surprise me</button>
+  </div>
+  <p class="count" aria-live="polite" hidden></p>
+  <ol class="talklist" id="past">
   {% for t in past %}{% include "_talkrow.html" %}{% endfor %}
   </ol>
 </section>
+<script>
+(function () {
+  var finder = document.querySelector(".finder");
+  var rows = Array.prototype.slice.call(document.querySelectorAll("#past li"));
+  if (!finder || !rows.length) return;
+  var input = finder.querySelector("input");
+  var chips = Array.prototype.slice.call(finder.querySelectorAll(".chips button"));
+  var count = document.querySelector(".count");
+  var cat = "";
+  function apply() {
+    var q = input.value.trim().toLowerCase(), shown = 0;
+    rows.forEach(function (li) {
+      var ok = (!cat || li.dataset.cat === cat) && (!q || li.dataset.text.indexOf(q) !== -1);
+      li.hidden = !ok;
+      if (ok) shown++;
+    });
+    count.hidden = shown === rows.length;
+    count.textContent = shown ? shown + " of " + rows.length + " talks" : "No talks match. Try a different word.";
+  }
+  chips.forEach(function (b) {
+    b.addEventListener("click", function () {
+      cat = b.dataset.cat;
+      chips.forEach(function (c) { c.setAttribute("aria-pressed", String(c === b)); });
+      apply();
+    });
+  });
+  input.addEventListener("input", apply);
+  finder.querySelector(".surprise").addEventListener("click", function () {
+    var pool = rows.filter(function (li) { return !li.hidden; });
+    if (!pool.length) pool = rows;
+    location.href = pool[Math.floor(Math.random() * pool.length)].querySelector("a").href;
+  });
+  finder.hidden = false;
+})();
+</script>
 {% endblock %}

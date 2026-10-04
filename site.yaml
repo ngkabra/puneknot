@@ -17,6 +17,12 @@ next_date:
 start_time: "18:30"
 cover_charge: ₹300
 
+# Broad groups for the filter on the Talks page. Each talk's `category` must be one of these.
+categories:
+  - Science & nature
+  - Economy & society
+  - Ideas & culture
+
 schedule:
   - time: "6:30"
     what: Doors

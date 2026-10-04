@@ -5,6 +5,7 @@ speakers:
 - Niranjan Pedanekar
 date: '2025-09-25'
 field: Theatre & poetry
+category: Ideas & culture
 poster: 2025-09-25.jpg
 ---
 

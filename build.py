@@ -34,7 +34,7 @@ def render_md(text: str) -> str:
     return html.replace('href="/', f'href="{BASE}/')
 
 
-def load_talks(today: dt.date) -> list[dict]:
+def load_talks(today: dt.date, categories: list[str]) -> list[dict]:
     talks = []
     for path in sorted((ROOT / "talks").glob("*.md")):
         meta, body = read_front_matter(path)
@@ -44,6 +44,8 @@ def load_talks(today: dt.date) -> list[dict]:
         date = dt.date.fromisoformat(str(meta["date"]))
         abstract, _, bio = body.partition("## About the speaker")
         bio = bio.split("\n", 1)[1] if "\n" in bio else ""
+        if meta.get("category") and meta["category"] not in categories:
+            raise SystemExit(f"{path}: category '{meta['category']}' is not listed in site.yaml")
         poster = meta.get("poster")
         if poster and not (ROOT / "static" / "posters" / poster).exists():
             raise SystemExit(f"{path}: poster static/posters/{poster} not found")
@@ -100,7 +102,7 @@ def load_pages() -> list[dict]:
 def main() -> None:
     today = dt.date.today()
     site = yaml.safe_load((ROOT / "site.yaml").read_text(encoding="utf-8"))
-    talks = load_talks(today)
+    talks = load_talks(today, site.get("categories", []))
     pages = load_pages()
     past = [t for t in talks if not t["upcoming"]][::-1]
     upcoming = [t for t in talks if t["upcoming"]]

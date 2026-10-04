@@ -4,6 +4,7 @@ speakers:
 - Sutirth Dey
 date: '2026-07-23'
 field: AI & creativity
+category: Ideas & culture
 note: 'Came with an optional pre-talk pick from the speaker: Isaac Asimov''s short story "Profession".'
 poster: 2026-07-23.jpg
 ---

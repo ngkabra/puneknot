@@ -5,6 +5,7 @@ speakers:
 - Anu Raghunathan
 date: '2026-03-26'
 field: Synthetic biology
+category: Science & nature
 poster: 2026-03-26.jpg
 ---
 

@@ -4,6 +4,7 @@ speakers:
 - Karishma Kaushik
 date: '2025-08-28'
 field: Microbiology
+category: Science & nature
 poster: 2025-08-28.jpg
 ---
 

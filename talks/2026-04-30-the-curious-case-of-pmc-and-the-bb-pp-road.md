@@ -4,6 +4,7 @@ speakers:
 - Sumita Kale
 date: '2026-04-30'
 field: Civic affairs
+category: Economy & society
 poster: 2026-04-30.jpg
 ---
 

@@ -5,6 +5,7 @@ speakers:
 - Karthick Balasubramanian
 date: '2026-08-27'
 field: Ecology
+category: Science & nature
 poster: 2026-08-27.jpg
 ---
 

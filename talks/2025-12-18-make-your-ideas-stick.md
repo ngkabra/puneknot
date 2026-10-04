@@ -5,6 +5,7 @@ speakers:
 - Ravishankar Iyer
 date: '2025-12-18'
 field: Storytelling
+category: Ideas & culture
 note: Held on the third Thursday, to stay clear of Christmas.
 poster: 2025-12-18.jpg
 ---

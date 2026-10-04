@@ -4,6 +4,7 @@ speakers:
 - Niranjan Rajadhyaksha
 date: '2026-02-26'
 field: Economics
+category: Economy & society
 poster: 2026-02-26.jpg
 ---
 

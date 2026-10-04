@@ -5,6 +5,7 @@ speakers:
 - Robert T. Pennock
 date: '2025-07-31'
 field: Philosophy of science
+category: Science & nature
 poster: 2025-07-31.jpg
 ---
 

@@ -4,6 +4,7 @@ speakers:
 - Vidya Mahambare
 date: '2025-06-19'
 field: Economics
+category: Economy & society
 note: 'Held a week early: the speaker was visiting from Chennai.'
 poster: 2025-06-19.jpg
 ---

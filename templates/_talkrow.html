@@ -1,4 +1,4 @@
-<li><a href="{{ base }}/talks/{{ t.slug }}/">
+<li data-cat="{{ t.category or '' }}" data-text="{{ (t.title ~ ' ' ~ (t.subtitle or '') ~ ' ' ~ t.speaker_line ~ ' ' ~ t.field)|lower }}"><a href="{{ base }}/talks/{{ t.slug }}/">
   {% if t.thumb %}<img loading="lazy" src="{{ base }}/static/posters/{{ t.thumb }}" alt="" width="60" height="84">{% else %}<span class="nothumb"></span>{% endif %}
   <span class="t"><b>{{ t.title }}</b><span>{{ t.speaker_line }}</span></span>
   <span class="f">{{ t.field }}</span>

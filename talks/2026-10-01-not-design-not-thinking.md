@@ -5,6 +5,7 @@ speakers:
 - Kalpana Korwar
 date: '2026-10-01'
 field: Design
+category: Ideas & culture
 note: Held on the first Thursday of October, moved from the last Thursday of September.
 poster: 2026-10-01.jpg
 ---

@@ -5,6 +5,7 @@ speakers:
 - Suvrat Kher
 date: '2025-11-27'
 field: Geology
+category: Science & nature
 poster: 2025-11-27.jpg
 ---
 

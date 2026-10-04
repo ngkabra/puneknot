@@ -21,6 +21,7 @@ You can do all of this in the GitHub web interface.
    - Speaker Name
    date: '2026-11-26'
    field: Geology
+   category: Science & nature
    poster: 2026-11-26.jpg
    ---
 
@@ -30,6 +31,9 @@ You can do all of this in the GitHub web interface.
 
    The bio.
    ```
+
+   `field` is free text. `category` drives the filter on the Talks page and must be one of the
+   groups listed under `categories` in `site.yaml`.
 
 3. Commit. The site updates within ten minutes.
 

@@ -5,6 +5,7 @@ speakers:
 - J. Ramanand
 date: '2026-06-25'
 field: Curiosity
+category: Ideas & culture
 poster: 2026-06-25.jpg
 ---
 

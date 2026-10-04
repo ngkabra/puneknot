@@ -4,6 +4,7 @@ speakers:
 - Deepak 'Chuck' Gopalakrishnan
 date: '2025-10-29'
 field: Music & technology
+category: Ideas & culture
 note: Held on a Wednesday.
 poster: 2025-10-29.jpg
 ---

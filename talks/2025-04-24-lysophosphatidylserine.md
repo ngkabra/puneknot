@@ -5,6 +5,7 @@ speakers:
 - Siddhesh Kamat
 date: '2025-04-24'
 field: Biology
+category: Science & nature
 poster: 2025-04-24.jpg
 ---
 
