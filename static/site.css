@@ -49,6 +49,10 @@ main { display: block; }
 .next h2 a { text-decoration: none; }
 .next-body p { color: var(--muted); margin-top: 4px; }
 
+.photo { margin: clamp(40px, 7vw, 80px) 0 0; }
+.photo img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center 30%; }
+.photo figcaption { font-size: 15px; color: var(--muted); margin-top: 10px; }
+
 .sechead { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
 .sechead h2 { font-size: clamp(28px, 3.4vw, 38px); }
 .sechead a { font: 500 16px/1 var(--head); text-transform: uppercase; letter-spacing: .12em; }

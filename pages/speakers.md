@@ -6,7 +6,7 @@ order: 4
 
 ## The room
 
-A restaurant and bar in Aundh, with ordinary tables and chairs, and sixty-odd people who have bought a ticket to hear you. They will be eating and drinking while you talk. They come from every background: engineers, doctors, teachers, retired professors, students, and usually two or three school children. Assume high-school science and nothing more.
+A restaurant and bar in Aundh, with ordinary tables and chairs, and sixty-odd people who have bought a ticket to hear you. They will be eating and drinking while you talk. The audience is mixed, and usually includes two or three high-school students. Assume high-school science and nothing more.
 
 ## The format
 
@@ -29,8 +29,8 @@ We do not pay a speaker's fee. Nobody at KnOT is paid, including us.
 
 ## What makes a good KnOT talk
 
-Something you know deeply and can explain to a stranger over a drink. It should be non-fiction and grounded in fact. Past talks have covered a fat molecule in the brain, a newly found galaxy, the rocks of the Himalaya, Adam Smith, biofilms, theatre, and a road over a hill in Pune. See [all the talks](/talks/).
+Something you know well and can explain to a stranger over a drink. It should be non-fiction and grounded in fact. Past talks have covered a fat molecule in the brain, a newly found galaxy, the rocks of the Himalaya, Adam Smith, biofilms, theatre, and a road over a hill in Pune. See [all the talks](/talks/).
 
 ## Suggest a speaker
 
-Know someone we should invite, or want to speak yourself? Write to [puneknot@gmail.com](mailto:puneknot@gmail.com?subject=Speaker%20suggestion%20for%20Pune%20KnOT) with the person's name, what they would talk about, and where you have heard them speak. Or tell any organizer at the next talk.
+To suggest someone we should invite, or yourself, write to [puneknot@gmail.com](mailto:puneknot@gmail.com?subject=Speaker%20suggestion%20for%20Pune%20KnOT) with the person's name, what they would talk about, and where you have heard them speak. Or tell any organizer at the next talk.

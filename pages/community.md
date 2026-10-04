@@ -1,6 +1,6 @@
 ---
 title: The community
-lede: Pune KnOT is two things. The monthly talk, and a WhatsApp community of people who come to it.
+lede: Besides the monthly talk, Pune KnOT is a WhatsApp community of the people who come to it.
 order: 3
 cta: true
 ---
@@ -17,7 +17,7 @@ Joining the community puts you on the announcements list only. The two groups ar
 
 - **Write it yourself.** No forwards.
 - **Events go in Related Events,** and only in-person events in Pune. No webinars, no events elsewhere.
-- **No politics, no religion.** Policy, yes. Politicians, no. Science against pseudoscience, yes, but without attacking anyone's religion. Organizers will close a thread that turns partisan.
+- **No politics, no religion.** You can discuss policy, but not politicians or parties. You can argue science against pseudoscience, but without attacking anyone's religion. Organizers will close a thread that turns partisan.
 - **Be decent.** No personal attacks, nothing that makes others feel unwelcome.
 - **If you see something off, tell an organizer.** If you are not sure whether a post belongs, ask one.
-- **Too noisy?** Leave the groups and stay in the community. You will still get the announcements.
+- **If the groups get too busy,** leave them and stay in the community. You will still get the announcements.

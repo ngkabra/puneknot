@@ -1,6 +1,6 @@
 ---
 title: How it works
-lede: One expert, one subject, one evening a month. You listen, you ask, you eat.
+lede: What happens on the evening, what it costs, and the house rules.
 template: how.html
 order: 2
 ---
@@ -15,9 +15,9 @@ order: 2
 ## House rules
 
 1. **In person only.** There is no livestream and no recording, ever. You have to turn up.
-2. **Chatham House Rule.** You may repeat what you heard. You may not say who said it. This lets speakers and the audience talk freely.
+2. **Chatham House Rule.** You may repeat what you heard, but not who said it. This lets speakers and the audience talk freely.
 3. **We start and end on time.** The quiz begins at 7:00 whether or not you have arrived.
-4. **Talk to one stranger before you leave.** The talk is the excuse; meeting people is the point.
+4. **Talk to one stranger before you leave.** Part of why we run this is so that people in Pune who like this sort of thing get to know each other.
 
 ## Questions people ask
 
