@@ -19,6 +19,17 @@ order: 2
 3. **We start and end on time.** The quiz begins at 7:00 whether or not you have arrived.
 4. **Talk to one stranger before you leave.** Part of why we run this is so that people in Pune who like this sort of thing get to know each other.
 
+## From the warm-up quiz
+
+Harish Bhamidipati sets a short quiz around each evening's subject. This question is from the one before the Alaknanda Galaxy talk in January 2026.
+
+<blockquote class="quiz">Pu La Deshpande, the famous Marathi playwright and humorist, and his wife, Sunita Deshpande, were travelling on the Indrayani Express between Mumbai and Pune when they struck up a conversation with a young scientist seated nearby. Fascinated by the ideas he was working on, the couple later decided to personally fund his efforts to take science beyond universities and into public life. Who was this person? What did it result in?</blockquote>
+
+<details class="answer"><summary>Answer</summary>
+<p>Jayant Narlikar. It led to the creation of the Pu La Deshpande Popular Science Centre at IUCAA.</p>
+<p>Harish's cue after this one: “Please take time out and speak to strangers in the room today. You never know what these stray conversations can lead to!”</p>
+</details>
+
 ## Questions people ask
 
 **Do I have to drink?**
