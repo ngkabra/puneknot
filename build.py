@@ -29,7 +29,7 @@ def read_front_matter(path: Path) -> tuple[dict, str]:
 
 
 def render_md(text: str) -> str:
-    html = markdown.markdown(text, extensions=["extra", "sane_lists", "smarty"])
+    html = markdown.markdown(text, extensions=["extra", "sane_lists", "smarty", "toc"])
     # Root-relative links in the copy must respect BASE_URL.
     return html.replace('href="/', f'href="{BASE}/')
 
@@ -134,6 +134,7 @@ def main() -> None:
         lstrip_blocks=True,
     )
     env.filters["longdate"] = lambda d: f"{d:%A}, {d.day} {d:%B %Y}"
+    env.filters["md_inline"] = lambda text: render_md(text).removeprefix("<p>").removesuffix("</p>")
     env.filters["shortdate"] = lambda d: f"{d.day} {d:%b %Y}"
     env.globals.update(site=site, base=BASE, pages=pages, year=today.year, talk_count=len(past))
 

@@ -4,10 +4,10 @@
   <h2>Who runs it</h2>
   <ul class="people">
     {% for o in site.organizers %}
-    <li><b>{% if o.url %}<a href="{{ o.url }}">{{ o.name }}</a>{% else %}{{ o.name }}{% endif %}</b> {{ o.line }}</li>
+    <li><b>{% if o.url %}<a href="{{ o.url }}">{{ o.name }}</a>{% else %}{{ o.name }}{% endif %}</b> {{ o.line|md_inline|safe }}</li>
     {% endfor %}
   </ul>
-  <p>With help from <b>{{ site.helpers.names }}</b> ({{ site.helpers.line }}). Thanks to {% if site.venue_host.url %}<a href="{{ site.venue_host.url }}">{{ site.venue_host.name }}</a>{% else %}{{ site.venue_host.name }}{% endif %} and the team at {% if site.venue.instagram %}<a href="{{ site.venue.instagram }}">{{ site.venue.name }}</a>{% else %}{{ site.venue.name }}{% endif %} for the room, and to Anoop Mahajan for the idea.</p>
+  <p>With help from <b>{{ site.helpers.names }}</b> ({{ site.helpers.line }}). Thanks to {% if site.venue_host.url %}<a href="{{ site.venue_host.url }}">{{ site.venue_host.name }}</a>{% else %}{{ site.venue_host.name }}{% endif %} and the team at {% if site.venue.instagram %}<a href="{{ site.venue.instagram }}">{{ site.venue.name }}</a>{% else %}{{ site.venue.name }}{% endif %} for the room, and to <a href="{{ site.inspiration.url }}">{{ site.inspiration.name }}</a> for the idea.</p>
 
   <h2>Written about us</h2>
   <ul class="people">
@@ -20,6 +20,6 @@
   <p>Nothing here is hard to copy: a venue that will give you a quiet weeknight, one good speaker a month, a WhatsApp group, and a rule that you start on time. If you want to run a Knowledge on Tap in your city or on your campus, write to us and we will tell you what we have learnt.</p>
 
   <h2>Contact</h2>
-  <p><a href="mailto:{{ site.email }}">{{ site.email }}</a>, or find any of us at {{ site.venue.name }} on the last Thursday of the month.</p>
+  <p><a href="mailto:{{ site.email }}">{{ site.email }}</a>, or find any of us at <a href="{{ site.venue.map }}">{{ site.venue.name }}</a> on the last Thursday of the month.</p>
 </section>
 {% endblock %}

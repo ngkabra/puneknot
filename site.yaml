@@ -40,19 +40,19 @@ schedule:
 
 organizers:
   - name: Ashish Kulkarni
-    line: Teaches economics and writes EconForEverybody.
+    line: Teaches economics and writes [EconForEverybody](https://www.econforeverybody.com).
     url: https://www.econforeverybody.com
   - name: Harish Bhamidipati
     line: Management consultant; runs Align By Design.
     url: https://www.linkedin.com/in/bvhk/
   - name: Nagaraj Balasubramanian
-    line: Cell biologist at IISER Pune.
-    url: https://x.com/AdhesionLab
+    line: Cell biologist at [IISER Pune](https://www.iiserpune.ac.in/).
+    url: https://www.iiserpune.ac.in/research/department/biology/people/faculty/regular-faculty/nagaraj-balasubramanian/9
   - name: Navin Kabra
-    line: CTO at ReliScore; writes the FutureIQ newsletter.
+    line: CTO at [ReliScore](https://reliscore.com/); writes the [FutureIQ](https://futureiq.substack.com/) newsletter.
     url: https://x.com/NGKabra
   - name: Ravishankar Iyer
-    line: Storytelling coach and author of Story Rules.
+    line: Storytelling coach and author of [Story Rules](https://www.storyrules.com/).
     url: https://x.com/storyrulesindia
 
 # Shown under the organizer list on the About page. A `url` is optional everywhere here.
@@ -61,7 +61,10 @@ helpers:
   line: posters, speaker coordination and overall project management
 venue_host:
   name: Srikant Shirke
-  url:
+  url: https://www.linkedin.com/in/shrikantshirke24/
+inspiration:
+  name: Anoop Mahajan
+  url: https://x.com/anoopsmahajan
 
 press:
   - title: KnOT in My Backyard
