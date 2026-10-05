@@ -34,6 +34,24 @@ def render_md(text: str) -> str:
     return html.replace('href="/', f'href="{BASE}/')
 
 
+def speaker_list(path: Path, speakers: list) -> list[dict]:
+    """Each speaker is a plain name, or a mapping with name and optional url and links."""
+    out = []
+    for sp in speakers:
+        if isinstance(sp, str):
+            sp = {"name": sp}
+        if not isinstance(sp, dict) or not sp.get("name"):
+            raise SystemExit(f"{path}: each speaker needs a name")
+        links = sp.get("links") or {}
+        if not isinstance(links, dict):
+            raise SystemExit(f"{path}: links for {sp['name']} must be 'Label: https://...' lines")
+        for label, url in [("url", sp.get("url"))] + list(links.items()):
+            if url and not str(url).startswith(("https://", "http://", "mailto:")):
+                raise SystemExit(f"{path}: {sp['name']}: '{label}' must start with https://, http:// or mailto:")
+        out.append({"name": sp["name"], "url": sp.get("url"), "links": [{"label": k, "url": v} for k, v in links.items()]})
+    return out
+
+
 def load_talks(today: dt.date, categories: list[str]) -> list[dict]:
     talks = []
     for path in sorted((ROOT / "talks").glob("*.md")):
@@ -42,6 +60,7 @@ def load_talks(today: dt.date, categories: list[str]) -> list[dict]:
             if key not in meta:
                 raise SystemExit(f"{path}: front matter needs '{key}'")
         date = dt.date.fromisoformat(str(meta["date"]))
+        speakers = speaker_list(path, meta["speakers"])
         abstract, _, bio = body.partition("## About the speaker")
         bio = bio.split("\n", 1)[1] if "\n" in bio else ""
         if meta.get("category") and meta["category"] not in categories:
@@ -62,7 +81,8 @@ def load_talks(today: dt.date, categories: list[str]) -> list[dict]:
                 "abstract_html": render_md(abstract),
                 "bio_html": render_md(bio),
                 "thumb": thumb,
-                "speaker_line": " & ".join(meta["speakers"]),
+                "speakers": speakers,
+                "speaker_line": " & ".join(sp["name"] for sp in speakers),
             }
         )
     talks.sort(key=lambda t: t["date"])

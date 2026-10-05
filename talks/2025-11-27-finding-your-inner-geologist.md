@@ -2,7 +2,9 @@
 title: Finding Your Inner Geologist
 subtitle: Mysteries the Himalayas hold
 speakers:
-- Suvrat Kher
+- name: Suvrat Kher
+  links:
+    X: https://x.com/rapiduplift
 date: '2025-11-27'
 field: Geology
 category: Science & nature

@@ -32,6 +32,22 @@ You can do all of this in the GitHub web interface.
    The bio.
    ```
 
+   To link a speaker's website or social media from the talk page, write the speaker as a
+   small block instead of a plain name. Everything except `name` is optional:
+
+   ```
+   speakers:
+   - name: Speaker Name
+     url: https://their-website.example
+     links:
+       X: https://x.com/handle
+       LinkedIn: https://www.linkedin.com/in/handle
+       Email: mailto:someone@example.org
+   ```
+
+   `url` turns the name into a link; each line under `links` becomes a labelled link below it.
+   Plain names and blocks can be mixed in one talk.
+
    `field` is free text. `category` drives the filter on the Talks page and must be one of the
    groups listed under `categories` in `site.yaml`.
 

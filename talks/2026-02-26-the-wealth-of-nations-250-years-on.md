@@ -1,7 +1,9 @@
 ---
 title: The Wealth of Nations, 250 Years On
 speakers:
-- Niranjan Rajadhyaksha
+- name: Niranjan Rajadhyaksha
+  links:
+    X: https://x.com/CafeEconomics
 date: '2026-02-26'
 field: Economics
 category: Economy & society

@@ -8,7 +8,10 @@
     <p class="label">{{ talk.field }} &nbsp;·&nbsp; No. {{ talk.number }}</p>
     <h1>{{ talk.title }}</h1>
     {% if talk.subtitle %}<p class="sub">{{ talk.subtitle }}</p>{% endif %}
-    <p class="who">{{ talk.speaker_line }}</p>
+    <p class="who">{% for sp in talk.speakers %}{% if sp.url %}<a href="{{ sp.url }}">{{ sp.name }}</a>{% else %}{{ sp.name }}{% endif %}{% if not loop.last %} &amp; {% endif %}{% endfor %}</p>
+    {% for sp in talk.speakers %}{% if sp.links %}
+    <p class="splinks">{% if talk.speakers|length > 1 %}<span>{{ sp.name }}</span>{% endif %}{% for l in sp.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
+    {% endif %}{% endfor %}
     <p class="date">{{ talk.date|longdate }} &nbsp;·&nbsp; {{ site.venue.name }}, Aundh</p>
     {% if talk.upcoming %}
     <p class="ticket">{% if talk.tickets_url %}<a class="btn" href="{{ talk.tickets_url }}">Get a ticket</a>{% else %}Tickets are released to the WhatsApp community first. <a href="{{ site.whatsapp }}">Join to get the link.</a>{% endif %}</p>

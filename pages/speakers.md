@@ -33,4 +33,4 @@ Something you know well and can explain to a stranger over a drink. It should be
 
 ## Suggest a speaker
 
-To suggest someone we should invite, or yourself, write to [puneknot@gmail.com](mailto:puneknot@gmail.com?subject=Speaker%20suggestion%20for%20Pune%20KnOT) with the person's name, what they would talk about, and where you have heard them speak. Or tell any organizer at the next talk.
+To suggest someone we should invite, or yourself, write to [puneknot@gmail.com](mailto:puneknot@gmail.com?subject=Speaker%20suggestion%20for%20Pune%20KnOT) with the person's name, what they would talk about, and where you have heard them speak. Tell us too whether you know them personally and can introduce them to us. Or tell any organizer at the next talk.
