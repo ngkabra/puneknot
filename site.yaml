@@ -9,7 +9,7 @@ venue:
   name: Wynkk
   area: Aundh, Pune
   map: https://maps.app.goo.gl/PCtPtvfTDXFufJDz6
-  instagram:
+  instagram: https://www.instagram.com/wynkk_pune/
 when: Last Thursday of every month
 # Date of the next talk, for the countdown on the home page, when the date is fixed but the
 # talk has no file in talks/ yet. Example: next_date: '2026-11-19'. Leave empty otherwise: the
