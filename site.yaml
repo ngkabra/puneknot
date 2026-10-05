@@ -9,6 +9,7 @@ venue:
   name: Wynkk
   area: Aundh, Pune
   map: https://maps.app.goo.gl/PCtPtvfTDXFufJDz6
+  instagram:
 when: Last Thursday of every month
 # Date of the next talk, for the countdown on the home page, when the date is fixed but the
 # talk has no file in talks/ yet. Example: next_date: '2026-11-19'. Leave empty otherwise: the
@@ -54,11 +55,13 @@ organizers:
     line: Storytelling coach and author of Story Rules.
     url: https://x.com/storyrulesindia
 
-volunteers:
-  - name: Navya Bhamidipati
-    line: Posters and speaker coordination.
-  - name: Agastya
-    line: Photographs.
+# Shown under the organizer list on the About page. A `url` is optional everywhere here.
+helpers:
+  names: Navya and Agastya Bhamidipati
+  line: posters, speaker coordination and overall project management
+venue_host:
+  name: Srikant Shirke
+  url:
 
 press:
   - title: KnOT in My Backyard

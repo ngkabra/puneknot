@@ -7,7 +7,7 @@
     <li><b>{% if o.url %}<a href="{{ o.url }}">{{ o.name }}</a>{% else %}{{ o.name }}{% endif %}</b> {{ o.line }}</li>
     {% endfor %}
   </ul>
-  <p>With help from {% for v in site.volunteers %}<b>{{ v.name }}</b> ({{ v.line|lower|trim('.') }}){{ ", " if not loop.last else "." }}{% endfor %} Thanks to the team at {{ site.venue.name }} for the room, and to Anoop Mahajan for the idea.</p>
+  <p>With help from <b>{{ site.helpers.names }}</b> ({{ site.helpers.line }}). Thanks to {% if site.venue_host.url %}<a href="{{ site.venue_host.url }}">{{ site.venue_host.name }}</a>{% else %}{{ site.venue_host.name }}{% endif %} and the team at {% if site.venue.instagram %}<a href="{{ site.venue.instagram }}">{{ site.venue.name }}</a>{% else %}{{ site.venue.name }}{% endif %} for the room, and to Anoop Mahajan for the idea.</p>
 
   <h2>Written about us</h2>
   <ul class="people">
