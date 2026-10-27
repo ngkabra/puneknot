@@ -10,6 +10,8 @@ speaker_photo: 2026-10-29.jpg
 tickets_url: https://sortmyscene.com/event/pune-knowledge-on-tap-dead-musicians-society-rebellion-and-tradition-in-indian-classical-music-oct-29-2026
 ---
 
+Knowledge or background in music is absolutely not necessary to attend/appreciate this talk. The themes of tradition vs modernity, the effect of the reel economy, and AI are now visible in so many different domains in life.
+
 Does rebellion go against tradition in music, or is it an integral part of it? Is Indian classical music, as we hear it in concerts and on Instagram today, thriving or becoming irrelevant?
 
 What kind of rebellion can save this art form from rigidity, nepotism, the reel economy, AI, and other challenges?
