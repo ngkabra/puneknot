@@ -1,5 +1,5 @@
 ---
-title: Rebellion and Tradition in Indian Classical Music
+title: 'Dead Musicians Society? Rebellion and Tradition in Indian Classical Music'
 speakers:
 - Mandar Karanjkar
 date: '2026-10-29'
