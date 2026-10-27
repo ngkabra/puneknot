@@ -53,13 +53,29 @@ You can do all of this in the GitHub web interface.
 
 3. Commit. The site updates within ten minutes.
 
-A talk dated today or later is shown as "Next on tap" on the home page, without a ticket
-link: the WhatsApp community gets the link first. When registration opens to the public,
-add one line to the talk's front matter and commit:
+A talk dated today or later is shown as "Next talk" on the home page. Add it as soon as the
+talk is announced, **without** a ticket link: the WhatsApp community gets the link first, so
+the button reads "Join the community for details" and points at the WhatsApp community.
+
+If tickets have not sold out a few days before the talk, we promote it on social media. At
+that point add the registration link to the talk's front matter and commit:
 
 ```
 tickets_url: https://...
 ```
+
+The button then reads "Get a ticket" and goes to the registration page, on the home page and
+on the talk's own page.
+
+The home page shows the speaker's photo next to the talk. Cut it out of the poster as a
+square, about 400 px, save it as `static/speakers/2026-11-26.jpg` (the site rounds it into a
+circle), and add:
+
+```
+speaker_photo: 2026-11-26.jpg
+```
+
+Without `speaker_photo`, the home page shows a small copy of the poster instead.
 
 The home page has a countdown to the next talk. It runs to the date of the next talk file.
 If there is none, it runs to `next_date` in `site.yaml` if you have set one, and otherwise to
@@ -94,7 +110,7 @@ python -m http.server --directory _site 8000
 | `pages/` | The long-form pages |
 | `site.yaml` | Facts used across the site |
 | `templates/` | Jinja2 HTML templates |
-| `static/` | CSS, logo, posters |
+| `static/` | CSS, logo, posters, speaker photos |
 | `build.py` | The generator |
 | `deploy/opalcc/` | Scripts and instructions for the Opalstack server, which pulls from GitHub |
 | `.github/workflows/build-check.yml` | Checks that a push still builds; does not deploy |

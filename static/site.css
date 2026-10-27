@@ -47,7 +47,10 @@ main { display: block; }
 .countdown b { display: block; font: 600 40px/1 var(--head); color: var(--ink); letter-spacing: 0; font-variant-numeric: tabular-nums; }
 .next h2 { font-size: clamp(26px, 3vw, 34px); line-height: 1.1; }
 .next h2 a { text-decoration: none; }
+.next-body { display: flex; align-items: center; gap: 24px; }
 .next-body p { color: var(--muted); margin-top: 4px; }
+.next-photo { flex: none; width: 128px; height: 128px; border-radius: 50%; object-fit: cover; }
+.next-poster { flex: none; width: 96px; }
 
 .photo { margin: clamp(40px, 7vw, 80px) 0 0; }
 .photo img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center 30%; }
@@ -154,6 +157,8 @@ a:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
   .hero { grid-template-columns: 1fr; }
   .hero img { width: 200px; }
   .next { grid-template-columns: 1fr; }
+  .next-photo { width: 96px; height: 96px; }
+  .next-poster { width: 72px; }
   .posters { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; }
   .talk { grid-template-columns: 1fr; }
   .talk-poster { max-width: 340px; }

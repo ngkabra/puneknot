@@ -6,6 +6,8 @@ date: '2026-10-29'
 field: Music
 category: Ideas & culture
 poster: 2026-10-29.jpg
+speaker_photo: 2026-10-29.jpg
+tickets_url: https://sortmyscene.com/event/pune-knowledge-on-tap-dead-musicians-society-rebellion-and-tradition-in-indian-classical-music-oct-29-2026
 ---
 
 Does rebellion go against tradition in music, or is it an integral part of it? Is Indian classical music, as we hear it in concerts and on Instagram today, thriving or becoming irrelevant?

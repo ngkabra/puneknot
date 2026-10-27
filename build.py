@@ -72,6 +72,9 @@ def load_talks(today: dt.date, categories: list[str]) -> list[dict]:
         if poster:
             candidate = poster.rsplit(".", 1)[0] + "-thumb.jpg"
             thumb = candidate if (ROOT / "static" / "posters" / candidate).exists() else poster
+        photo = meta.get("speaker_photo")
+        if photo and not (ROOT / "static" / "speakers" / photo).exists():
+            raise SystemExit(f"{path}: speaker_photo static/speakers/{photo} not found")
         talks.append(
             {
                 **meta,

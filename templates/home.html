@@ -18,13 +18,20 @@
   </div>
   {% if next_talk %}
   <div class="next-body">
-    <h2><a href="{{ base }}/talks/{{ next_talk.slug }}/">{{ next_talk.title }}</a></h2>
-    <p>{{ next_talk.speaker_line }} &nbsp;·&nbsp; {{ next_talk.date|longdate }}</p>
+    {% if next_talk.speaker_photo %}
+    <img class="next-photo" src="{{ base }}/static/speakers/{{ next_talk.speaker_photo }}" alt="{{ next_talk.speaker_line }}" width="400" height="400">
+    {% elif next_talk.thumb %}
+    <img class="next-poster" src="{{ base }}/static/posters/{{ next_talk.thumb }}" alt="">
+    {% endif %}
+    <div>
+      <h2><a href="{{ base }}/talks/{{ next_talk.slug }}/">{{ next_talk.title }}</a></h2>
+      <p>{{ next_talk.speaker_line }} &nbsp;·&nbsp; {{ next_talk.date|longdate }}</p>
+    </div>
   </div>
   {% if next_talk.tickets_url %}
   <a class="btn" href="{{ next_talk.tickets_url }}">Get a ticket</a>
   {% else %}
-  <a class="btn" href="{{ site.whatsapp }}">Tickets via WhatsApp</a>
+  <a class="btn" href="{{ site.whatsapp }}">Join the community for details</a>
   {% endif %}
   {% else %}
   <div class="next-body">
