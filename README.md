@@ -25,7 +25,8 @@ You can do all of this in the GitHub web interface.
    poster: 2026-11-26.jpg
    ---
 
-   The abstract, in plain paragraphs.
+   The abstract, in plain paragraphs. If the speaker sent a short version for the
+   poster and a longer one, use the longer one here (and the longer bio).
 
    ## About the speaker
 
