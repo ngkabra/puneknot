@@ -7,6 +7,7 @@ field: Art history
 category: Ideas & culture
 poster: 2026-11-26.jpg
 speaker_photo: 2026-11-26.jpg
+tickets_url: https://sortmyscene.com/event/pune-knowledge-on-tap-epic-tales-on-tiny-scales-nov-26-2026
 ---
 
 Long before the tales of Rama were made into films and TV series, the Mughal Emperor Akbar
