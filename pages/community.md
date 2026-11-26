@@ -1,5 +1,6 @@
 ---
-title: The community
+title: Join the community
+nav_button: true
 lede: Besides the monthly talk, Pune KnOT is a WhatsApp community of the people who come to it.
 order: 3
 cta: true

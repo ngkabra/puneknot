@@ -20,8 +20,11 @@
   <a class="mark" href="{{ base }}/" aria-label="{{ site.name }}, home"><img src="{{ base }}/static/img/logo-320.png" alt="" width="44" height="44"><span>Pune Knowledge on Tap</span></a>
   <nav aria-label="Main">
     <a href="{{ base }}/talks/"{% if here == 'talks' %} aria-current="page"{% endif %}>Talks</a>
-    {% for p in pages %}
+    {% for p in pages if not p.nav_button %}
     <a href="{{ base }}/{{ p.slug }}/"{% if here == p.slug %} aria-current="page"{% endif %}>{{ p.nav or p.title }}</a>
+    {% endfor %}
+    {% for p in pages if p.nav_button %}
+    <a class="nav-btn" href="{{ base }}/{{ p.slug }}/"{% if here == p.slug %} aria-current="page"{% endif %}>{{ p.nav or p.title }}</a>
     {% endfor %}
   </nav>
 </header>

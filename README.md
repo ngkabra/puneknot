@@ -91,7 +91,7 @@ or audience photographs without the permission of the people concerned.
 
 ## Change the words
 
-- `pages/*.md`: How it works, The community, For speakers, About.
+- `pages/*.md`: How it works, Join the community, For speakers, About.
 - `site.yaml`: venue, WhatsApp link, the evening's schedule, organizers, press links.
 - `templates/home.html`: the home page.
 
