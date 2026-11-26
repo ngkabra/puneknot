@@ -4,6 +4,7 @@
 <section class="pagehead">
   <h1>{{ page.title }}</h1>
   {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+  {% if page.cta %}<p class="pagehead-cta"><a class="btn btn-red btn-big" href="{{ site.whatsapp }}">Join on WhatsApp</a></p>{% endif %}
 </section>
 {% block before %}{% endblock %}
 <section class="prose page">{{ page.html|safe }}</section>
